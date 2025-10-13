@@ -41,7 +41,7 @@ document.querySelectorAll('.service-item img').forEach(img => {
   });
 });
 
-// Hero image slideshow only
+// Hero image slideshow with preloading
 const heroImages = [
   'colourful.webp',
   'bucket.webp',
@@ -51,15 +51,35 @@ const heroImages = [
   'shoe.webp',
   'curtain.webp',
 ];
+
+// Preload all images
+const preloadImages = () => {
+  heroImages.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+};
+
 let heroIndex = 0;
 const heroImg = document.getElementById('hero-slideshow');
 if (heroImg) {
+  // Preload images immediately
+  preloadImages();
+  
+  // Start slideshow
   setInterval(() => {
-    heroImg.style.opacity = 0;
-    setTimeout(() => {
-      heroIndex = (heroIndex + 1) % heroImages.length;
-      heroImg.src = heroImages[heroIndex];
-      heroImg.style.opacity = 1;
-    }, 1000);
+    const nextIndex = (heroIndex + 1) % heroImages.length;
+    const nextImage = new Image();
+    nextImage.src = heroImages[nextIndex];
+    
+    // Only switch once next image is ready
+    nextImage.onload = () => {
+      heroImg.style.opacity = 0;
+      setTimeout(() => {
+        heroImg.src = heroImages[nextIndex];
+        heroImg.style.opacity = 1;
+        heroIndex = nextIndex;
+      }, 300);
+    };
   }, 5000);
 }
