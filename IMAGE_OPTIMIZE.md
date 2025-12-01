@@ -13,7 +13,7 @@ This project contains sample images used by the site (LOGO.jpg, colourful.webp, 
 3) Run the provided PowerShell script to generate optimized images
    - Open PowerShell in the project folder and run:
 
-   ./scripts/optimize-images.ps1
+   ./optimize-images.ps1
 
    This will create an `images-optimized` folder with resized JPG and WebP images at widths: 1600, 1200, 800, 400 px.
 

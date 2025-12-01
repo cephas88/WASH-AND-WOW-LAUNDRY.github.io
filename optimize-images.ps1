@@ -1,6 +1,6 @@
 # Image optimization script for Windows using ImageMagick
 # Usage: Open PowerShell, cd to this project folder and run:
-#   ./scripts/optimize-images.ps1
+#   ./optimize-images.ps1
 # Requirements: ImageMagick (magick.exe) must be in PATH
 # This script will take common image files in the project root and generate
 # resized, optimized WebP and resized JPG copies in the ./images-optimized folder.
