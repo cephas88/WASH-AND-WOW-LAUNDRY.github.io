@@ -10,12 +10,15 @@
   <meta name="geo.region" content="KE">
   <meta name="geo.placename" content="Makongeni Business Park, Thika">
   <meta name="geo.position" content="-1.0396;37.0900">
-  <meta property="og:title" content="WASH AND WOW LAUNDRY - Best Laundry Services in Makongeni Business Park, Thika">
+  <meta property="og:title" content="WASH AND WOW LAUNDRY - Premium Laundry Services in Makongeni Business Park, Thika">
   <meta property="og:description" content="Professional laundry services in Makongeni Business Park, Thika. Expert cleaning, free pickup & delivery, affordable rates. Visit us today!">
   <meta property="og:type" content="website">
-  <title>WASH AND WOW LAUNDRY - Best Laundry Services in Makongeni Business Park, Thika</title>
+  <title>WASH AND WOW LAUNDRY - Premium Laundry Services in Makongeni Business Park, Thika</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/jpeg" href="LOGO.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -49,131 +52,472 @@
   </script>
 </head>
 <body>
-  <header>
-  <img src="LOGO.jpg" alt="WASH AND WOW LAUNDRY Logo" class="logo">
-    <h1>WASH AND WOW LAUNDRY</h1>
-    <p class="slogan">EXPERIENCE THE WOW IN EVERY WASH!</p>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+  <!-- Floating bubbles background -->
+  <div class="bubbles-container" aria-hidden="true">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="header">
+    <nav class="nav">
+      <a href="#" class="logo-link">
+        <img src="LOGO.jpg" alt="WASH AND WOW LAUNDRY Logo" class="logo">
+        <span class="brand-name">Wash & Wow</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why-us">Why Us</a></li>
+        <li><a href="#offers">Offers</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+      </ul>
     </nav>
   </header>
+
+  <!-- Hero Section -->
   <section class="hero">
+    <div class="hero-bg"></div>
     <div class="hero-content">
-      <h2>Professional Laundry Services in Makongeni Business Park, Thika</h2>
-      <p>Your trusted laundry experts in Makongeni Business Park. Enjoy fresh, clean clothes with our fast, reliable, and affordable laundry solutions.</p>
-  <!-- free ironing banner removed as requested -->
-      <div class="hero-contact">
-        <p><strong>Call/WhatsApp:</strong> <a href="tel:+254742690291">+254742690291</a> | <a href="tel:+254740926724">+254740926724</a></p>
-        <p><a class="cta-btn" href="#services">View Services & Prices</a></p>
+      <div class="hero-badge">Premium Laundry Services</div>
+      <h1 class="hero-title">
+        <span class="title-line">Experience the</span>
+        <span class="title-highlight">WOW</span>
+        <span class="title-line">in Every Wash</span>
+      </h1>
+      <p class="hero-subtitle">Where pristine cleanliness meets exceptional care. Your trusted laundry experts in Makongeni Business Park, Thika.</p>
+      <div class="hero-cta">
+        <a href="#services" class="btn btn-primary">
+          <span>Explore Services</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="tel:+254742690291" class="btn btn-secondary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          <span>Call Now</span>
+        </a>
+      </div>
+      <div class="hero-promo">
+        <div class="promo-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <span>FREE Pickup & Delivery on All Orders!</span>
       </div>
     </div>
-    <div class="hero-image">
-      <img id="hero-slideshow" src="colourful.webp" alt="Laundry Service" class="hero-img" width="720" height="480" loading="eager">
-      <div class="hero-promo">FREE PICKUP AND RETURN FOR ALL ORDERS!</div>
+    <div class="hero-visual">
+      <div class="hero-image-wrapper">
+        <img id="hero-slideshow" src="colourful.webp" alt="Professional Laundry Service" class="hero-img">
+        <div class="hero-image-frame"></div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number" data-target="450">0</span>
+          <span class="stat-label">Happy Customers</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="8">0</span>
+          <span class="stat-label">Services</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="365">0</span>
+          <span class="stat-label">Days Open</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="water-graphics" aria-hidden="true">
-    <!-- decorative water waves + droplets -->
-    <svg width="100%" height="120" viewBox="0 0 1440 120" preserveAspectRatio="none" class="waves-svg">
-      <defs>
-        <linearGradient id="waveGrad" x1="0" x2="1">
-          <stop offset="0%" stop-color="#e6f7ff" />
-          <stop offset="100%" stop-color="#d7f0ff" />
-        </linearGradient>
-      </defs>
-      <path class="wave wave-back" fill="url(#waveGrad)" d="M0 60 C360 90 720 30 1440 60 L1440 120 L0 120 Z"></path>
-      <path class="wave wave-front" fill="#eaf9ff" d="M0 70 C360 40 720 100 1440 70 L1440 120 L0 120 Z"></path>
-      <g class="droplets" fill="#0a5a8a" opacity="0.12">
-        <circle cx="200" cy="30" r="4" />
-        <circle cx="360" cy="20" r="5" />
-        <circle cx="520" cy="28" r="3.5" />
-        <circle cx="900" cy="18" r="5" />
-      </g>
-    </svg>
-  </section>
-  <section class="discounts">
-    <h2>Special Discounts</h2>
-    <ul>
-      <li>Discount on every wash above 10kg</li>
-      <li>Discount for first-time customers</li>
-      <li>Refer a customer and get a discount on your next wash</li>
-    </ul>
-  </section>
+  <!-- Services Section -->
   <section id="services" class="services">
-    <h2>Our Services</h2>
-        <div class="service-list">
-      <div class="service-item">
-        <img src="colourful.webp" alt="Wash & Fold" class="service-icon">
-        <h3>Wash & Fold</h3>
-        <p class="lead">Perfect for everyday clothing</p>
-        <p class="price">80 Ksh / kg</p>
-        <p>All items are washed, dried, and neatly folded</p>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What We Offer</span>
+        <h2 class="section-title">Our Premium Services</h2>
+        <p class="section-subtitle">From everyday essentials to delicate care, we handle your laundry with precision and expertise</p>
       </div>
+      <div class="services-grid">
+        <article class="service-card featured">
+          <div class="service-image">
+            <img src="colourful.webp" alt="Wash & Fold Service">
+            <div class="service-overlay"></div>
+          </div>
+          <div class="service-content">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+            </div>
+            <h3>Wash & Fold</h3>
+            <p class="service-desc">Perfect for everyday clothing - washed, dried, and neatly folded</p>
+            <div class="service-price">
+              <span class="price-amount">80 Ksh</span>
+              <span class="price-unit">per kg</span>
+            </div>
+          </div>
+        </article>
 
-      <div class="service-item">
-        <img src="bucket.webp" alt="Wash, Iron & Fold" class="service-icon">
-        <h3>Wash, Iron & Fold</h3>
-        <p class="lead">Complete laundry service</p>
-        <p class="price">100 Ksh / kg</p>
-        <p>Professional washing, ironing and folding service</p>
-      </div>
+        <article class="service-card">
+          <div class="service-image">
+            <img src="bucket.webp" alt="Wash, Iron & Fold">
+            <div class="service-overlay"></div>
+          </div>
+          <div class="service-content">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <path d="M3 9h18M9 21V9"/>
+              </svg>
+            </div>
+            <h3>Wash, Iron & Fold</h3>
+            <p class="service-desc">Complete laundry service with professional pressing</p>
+            <div class="service-price">
+              <span class="price-amount">100 Ksh</span>
+              <span class="price-unit">per kg</span>
+            </div>
+          </div>
+        </article>
 
-      <div class="service-item">
-        <img src="blanket.webp" alt="Duvet & Blanket Cleaning" class="service-icon">
-        <h3>Duvet & Blanket Cleaning</h3>
-        <p class="lead">Deep-clean treatment for heavy bedding</p>
-        <p class="price">From 500 Ksh</p>
-        <p>Special handling: washed and thoroughly dried to retain loft and softness</p>
-      </div>
+        <article class="service-card">
+          <div class="service-image">
+            <img src="blanket.webp" alt="Duvet & Blanket Cleaning">
+            <div class="service-overlay"></div>
+          </div>
+          <div class="service-content">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <h3>Duvet & Blanket</h3>
+            <p class="service-desc">Deep-clean treatment for heavy bedding</p>
+            <div class="service-price">
+              <span class="price-amount">From 500 Ksh</span>
+            </div>
+          </div>
+        </article>
 
-      <div class="service-item">
-        <img src="towel.webp" alt="Towel Cleaning" class="service-icon">
-        <h3>Towel Cleaning</h3>
-        <p class="lead">Restore softness and absorbency</p>
-        <p>Professional towel care service</p>
-      </div>
+        <article class="service-card">
+          <div class="service-image">
+            <img src="towel.webp" alt="Towel Cleaning">
+            <div class="service-overlay"></div>
+          </div>
+          <div class="service-content">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
+              </svg>
+            </div>
+            <h3>Towel Cleaning</h3>
+            <p class="service-desc">Restore softness and absorbency to your towels</p>
+          </div>
+        </article>
 
-      <div class="service-item">
-        <img src="suit.webp" alt="Suit Cleaning" class="service-icon">
-        <h3>Suit Cleaning</h3>
-        <p class="lead">Professional suit care</p>
-        <p>Expert cleaning for formal wear</p>
-      </div>
+        <article class="service-card">
+          <div class="service-image">
+            <img src="suit.webp" alt="Suit Cleaning">
+            <div class="service-overlay"></div>
+          </div>
+          <div class="service-content">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <h3>Suit Cleaning</h3>
+            <p class="service-desc">Expert care for your professional formal wear</p>
+          </div>
+        </article>
 
-      <div class="service-item">
-        <img src="shoe.webp" alt="Shoe Cleaning" class="service-icon">
-        <h3>Shoe Cleaning</h3>
-        <p class="lead">Restore your footwear</p>
-        <p>Expert cleaning for all shoes</p>
-      </div>
+        <article class="service-card">
+          <div class="service-image">
+            <img src="shoe.webp" alt="Shoe Cleaning">
+            <div class="service-overlay"></div>
+          </div>
+          <div class="service-content">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                <line x1="9" y1="9" x2="9.01" y2="9"/>
+                <line x1="15" y1="9" x2="15.01" y2="9"/>
+              </svg>
+            </div>
+            <h3>Shoe Cleaning</h3>
+            <p class="service-desc">Restore and refresh all types of footwear</p>
+          </div>
+        </article>
 
-      <div class="service-item">
-        <img src="curtain.webp" alt="Curtain Cleaning" class="service-icon">
-        <h3>Curtain Cleaning</h3>
-        <p class="lead">Professional curtain care</p>
-        <p>Remove dust and refresh fabrics</p>
-      </div>
+        <article class="service-card">
+          <div class="service-image">
+            <img src="curtain.webp" alt="Curtain Cleaning">
+            <div class="service-overlay"></div>
+          </div>
+          <div class="service-content">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <line x1="3" y1="9" x2="21" y2="9"/>
+                <line x1="9" y1="21" x2="9" y2="9"/>
+              </svg>
+            </div>
+            <h3>Curtain Cleaning</h3>
+            <p class="service-desc">Remove dust and refresh your window fabrics</p>
+          </div>
+        </article>
 
-      <div class="service-item">
-        <img src="colourful.webp" alt="Kids Special Wash" class="service-icon">
-        <h3>Kids Special Wash</h3>
-        <p class="lead">Gentle wash program and hypoallergenic detergents</p>
-        <p>Special care to keep kids' clothes soft, safe and stain-treated</p>
+        <article class="service-card">
+          <div class="service-image">
+            <img src="colourful.webp" alt="Kids Special Wash">
+            <div class="service-overlay"></div>
+          </div>
+          <div class="service-content">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+              </svg>
+            </div>
+            <h3>Kids Special Wash</h3>
+            <p class="service-desc">Gentle hypoallergenic wash for children's clothes</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
-  <section id="about" class="about">
-    <h2>About Us</h2>
-    <p>Conveniently located in Makongeni Business Park, Thika, we are the area's premier laundry service provider. Our modern facility and experienced team are dedicated to providing top-notch laundry services to our community. Whether you're a busy professional, a student, or a family, our team is passionate about making your laundry experience hassle-free and WOW-worthy!</p>
-    <p><strong>Location:</strong> Makongeni Business Park, Thika (Next to the main entrance)</p>
-    <img src="LOGO.jpg" alt="WASH AND WOW LAUNDRY Logo" class="about-img">
+
+  <!-- Why Choose Us Section -->
+  <section id="why-us" class="why-us">
+    <div class="container">
+      <div class="section-header light">
+        <span class="section-tag">Why Choose Us</span>
+        <h2 class="section-title">The Wash & Wow Difference</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h3>Fast Turnaround</h3>
+          <p>Quick service without compromising quality. Same-day service available.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3>Premium Care</h3>
+          <p>We treat every garment with the utmost care using quality detergents.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="1" y="3" width="15" height="13"/>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+              <circle cx="5.5" cy="18.5" r="2.5"/>
+              <circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+          </div>
+          <h3>Free Delivery</h3>
+          <p>Complimentary pickup and return for all orders within Makongeni.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <line x1="12" y1="1" x2="12" y2="23"/>
+              <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+            </svg>
+          </div>
+          <h3>Affordable Pricing</h3>
+          <p>Competitive rates that deliver exceptional value for your money.</p>
+        </div>
+      </div>
+    </div>
   </section>
-  <footer>
-    <p>&copy; 2025 WASH AND WOW LAUNDRY. All rights reserved.</p>
+
+  <!-- Special Offers Section -->
+  <section id="offers" class="offers">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Limited Time</span>
+        <h2 class="section-title">Special Offers</h2>
+      </div>
+      <div class="offers-grid">
+        <div class="offer-card">
+          <div class="offer-badge">SAVE</div>
+          <div class="offer-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="9" cy="21" r="1"/>
+              <circle cx="20" cy="21" r="1"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
+            </svg>
+          </div>
+          <h3>Bulk Discount</h3>
+          <p>Special discount on every wash above 10kg</p>
+        </div>
+        <div class="offer-card highlight">
+          <div class="offer-badge">NEW</div>
+          <div class="offer-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <h3>First-Time Bonus</h3>
+          <p>Exclusive discount for all first-time customers</p>
+        </div>
+        <div class="offer-card">
+          <div class="offer-badge">EARN</div>
+          <div class="offer-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+              <path d="M16 3.13a4 4 0 010 7.75"/>
+            </svg>
+          </div>
+          <h3>Referral Rewards</h3>
+          <p>Refer a friend and get discount on your next wash</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-wrapper">
+        <div class="about-image">
+          <img src="LOGO.jpg" alt="WASH AND WOW LAUNDRY">
+          <div class="about-image-accent"></div>
+        </div>
+        <div class="about-content">
+          <span class="section-tag">Our Story</span>
+          <h2 class="section-title">About Wash & Wow</h2>
+          <p class="about-text">Conveniently located in Makongeni Business Park, Thika, we are the area's premier laundry service provider. Our modern facility and experienced team are dedicated to providing top-notch laundry services to our community.</p>
+          <p class="about-text">Whether you're a busy professional, a student, or a family, our team is passionate about making your laundry experience hassle-free and WOW-worthy!</p>
+          <div class="about-location">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span>Makongeni Business Park, Thika (Next to the main entrance)</span>
+          </div>
+          <div class="about-hours">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <span>Open Daily: 8:00 AM - 6:00 PM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <span class="section-tag light">Get In Touch</span>
+          <h2 class="section-title light">Contact Us</h2>
+          <p class="contact-text">Ready to experience the WOW? Reach out to us today for pickup or any inquiries.</p>
+          <div class="contact-methods">
+            <a href="tel:+254742690291" class="contact-method">
+              <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <span class="contact-label">Phone</span>
+                <span class="contact-value">+254 742 690 291</span>
+              </div>
+            </a>
+            <a href="tel:+254740926724" class="contact-method">
+              <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <span class="contact-label">Alternative</span>
+                <span class="contact-value">+254 740 926 724</span>
+              </div>
+            </a>
+            <a href="https://wa.me/254742690291" target="_blank" class="contact-method whatsapp">
+              <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <span class="contact-label">WhatsApp</span>
+                <span class="contact-value">Message Us</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="contact-cta">
+          <h3>Ready to Get Started?</h3>
+          <p>Schedule your free pickup today and experience laundry like never before.</p>
+          <a href="https://wa.me/254742690291?text=Hi%2C%20I'd%20like%20to%20schedule%20a%20laundry%20pickup" target="_blank" class="btn btn-whatsapp">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Schedule Pickup on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="LOGO.jpg" alt="WASH AND WOW LAUNDRY" class="footer-logo">
+          <p>Experience the WOW in every wash!</p>
+        </div>
+        <div class="footer-links">
+          <a href="#services">Services</a>
+          <a href="#why-us">Why Us</a>
+          <a href="#offers">Offers</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 WASH AND WOW LAUNDRY. All rights reserved.</p>
+        <p class="footer-location">Makongeni Business Park, Thika, Kenya</p>
+      </div>
+    </div>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
