@@ -141,26 +141,26 @@ function initReviewsSection() {
 
   const storageKey = 'washandwow-user-reviews';
   const baseReviews = [
-    { name: 'Amina', rating: 5, review: 'Fast pickup and my clothes came back smelling fresh and neatly folded. Great service!' },
-    { name: 'Kevin', rating: 5, review: 'Very professional team. My white shirts were spotless and perfectly ironed.' },
-    { name: 'Faith', rating: 4, review: 'I loved the communication and timely delivery. Definitely using Wash & Wow again.' },
-    { name: 'Brian', rating: 5, review: 'They handled my suits with excellent care. Looked brand new after cleaning.' },
-    { name: 'Diana', rating: 4, review: 'Affordable prices and quality work. The free delivery made it super convenient.' },
-    { name: 'Peter', rating: 5, review: 'The duvet cleaning service was amazing. It came back fluffy and very clean.' },
-    { name: 'Mercy', rating: 5, review: 'Customer service was friendly and helpful. Clothes were ready exactly when promised.' },
-    { name: 'Samuel', rating: 5, review: 'Best laundry experience I have had in Thika. Highly recommended to everyone.' },
-    { name: 'Joan', rating: 4, review: 'My kids clothes were cleaned gently and still smelled fantastic. Thank you!' },
-    { name: 'Daniel', rating: 5, review: 'Quick turnaround and no missing items. Everything returned in perfect condition.' },
-    { name: 'Lucy', rating: 5, review: 'I use them every week now. Consistent quality and excellent finishing.' },
-    { name: 'James', rating: 4, review: 'Great stain removal on my work uniforms. Impressed with the results.' },
-    { name: 'Ruth', rating: 5, review: 'The team is polite and dependable. Pickup and drop off were very smooth.' },
-    { name: 'Dennis', rating: 4, review: 'Shoe cleaning was top notch. My sneakers looked fresh and bright again.' },
-    { name: 'Grace', rating: 5, review: 'Very clean packaging and neat folding. You can tell they pay attention to detail.' },
-    { name: 'Esther', rating: 5, review: 'Laundry was handled with care and delivered on time. Wonderful service overall.' },
-    { name: 'Alex', rating: 4, review: 'Fair pricing and premium results. I appreciate the reliability every single time.' },
-    { name: 'Caroline', rating: 5, review: 'The ironing quality is excellent. My outfits were ready for work immediately.' },
-    { name: 'John', rating: 4, review: 'Friendly staff and easy booking process through phone. Super convenient service.' },
-    { name: 'Naomi', rating: 5, review: 'Excellent neighborhood laundry partner. Clean, fresh, and always professional.' }
+    { name: 'Amina', rating: 5, date: '2026-03-01T10:15:00.000Z', review: 'Fast pickup and my clothes came back smelling fresh and neatly folded. Great service!' },
+    { name: 'Kevin', rating: 5, date: '2026-03-02T11:40:00.000Z', review: 'Very professional team. My white shirts were spotless and perfectly ironed.' },
+    { name: 'Faith', rating: 4, date: '2026-03-03T08:20:00.000Z', review: 'I loved the communication and timely delivery. Definitely using Wash & Wow again.' },
+    { name: 'Brian', rating: 5, date: '2026-03-04T14:10:00.000Z', review: 'They handled my suits with excellent care. Looked brand new after cleaning.' },
+    { name: 'Diana', rating: 4, date: '2026-03-05T09:35:00.000Z', review: 'Affordable prices and quality work. The free delivery made it super convenient.' },
+    { name: 'Peter', rating: 5, date: '2026-03-06T13:05:00.000Z', review: 'The duvet cleaning service was amazing. It came back fluffy and very clean.' },
+    { name: 'Mercy', rating: 5, date: '2026-03-07T15:45:00.000Z', review: 'Customer service was friendly and helpful. Clothes were ready exactly when promised.' },
+    { name: 'Samuel', rating: 5, date: '2026-03-08T12:30:00.000Z', review: 'Best laundry experience I have had in Thika. Highly recommended to everyone.' },
+    { name: 'Joan', rating: 4, date: '2026-03-09T16:25:00.000Z', review: 'My kids clothes were cleaned gently and still smelled fantastic. Thank you!' },
+    { name: 'Daniel', rating: 5, date: '2026-03-10T10:55:00.000Z', review: 'Quick turnaround and no missing items. Everything returned in perfect condition.' },
+    { name: 'Lucy', rating: 5, date: '2026-03-11T09:10:00.000Z', review: 'I use them every week now. Consistent quality and excellent finishing.' },
+    { name: 'James', rating: 4, date: '2026-03-12T17:05:00.000Z', review: 'Great stain removal on my work uniforms. Impressed with the results.' },
+    { name: 'Ruth', rating: 5, date: '2026-03-13T07:50:00.000Z', review: 'The team is polite and dependable. Pickup and drop off were very smooth.' },
+    { name: 'Dennis', rating: 4, date: '2026-03-14T13:15:00.000Z', review: 'Shoe cleaning was top notch. My sneakers looked fresh and bright again.' },
+    { name: 'Grace', rating: 5, date: '2026-03-15T11:25:00.000Z', review: 'Very clean packaging and neat folding. You can tell they pay attention to detail.' },
+    { name: 'Esther', rating: 5, date: '2026-03-16T14:40:00.000Z', review: 'Laundry was handled with care and delivered on time. Wonderful service overall.' },
+    { name: 'Alex', rating: 4, date: '2026-03-17T10:05:00.000Z', review: 'Fair pricing and premium results. I appreciate the reliability every single time.' },
+    { name: 'Caroline', rating: 5, date: '2026-03-18T12:45:00.000Z', review: 'The ironing quality is excellent. My outfits were ready for work immediately.' },
+    { name: 'John', rating: 4, date: '2026-03-19T08:55:00.000Z', review: 'Friendly staff and easy booking process through phone. Super convenient service.' },
+    { name: 'Naomi', rating: 5, date: '2026-03-20T15:20:00.000Z', review: 'Excellent neighborhood laundry partner. Clean, fresh, and always professional.' }
   ];
 
   const escapeHtml = (text) =>
@@ -171,19 +171,18 @@ function initReviewsSection() {
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#39;');
 
+  const normalizeReview = (item) => {
+    if (!item || typeof item.name !== 'string' || typeof item.review !== 'string') return null;
+    if (!Number.isInteger(item.rating) || item.rating < 1 || item.rating > 5) return null;
+    const date = typeof item.date === 'string' && item.date ? item.date : new Date().toISOString();
+    return { name: item.name, review: item.review, rating: item.rating, date };
+  };
+
   const loadUserReviews = () => {
     try {
       const parsed = JSON.parse(localStorage.getItem(storageKey) || '[]');
       if (!Array.isArray(parsed)) return [];
-      return parsed.filter(
-        item =>
-          item &&
-          typeof item.name === 'string' &&
-          typeof item.review === 'string' &&
-          Number.isInteger(item.rating) &&
-          item.rating >= 1 &&
-          item.rating <= 5
-      );
+      return parsed.map(normalizeReview).filter(Boolean);
     } catch (error) {
       return [];
     }
@@ -194,8 +193,14 @@ function initReviewsSection() {
   };
 
   let userReviews = loadUserReviews();
+  const firebaseConfig = window.WASH_AND_WOW_FIREBASE || null;
+  const hasFirebaseSdk = typeof window.firebase !== 'undefined' && typeof window.firebase.initializeApp === 'function';
+  let firestore = null;
+  let isRemoteMode = false;
 
   const renderStars = (rating) => '★'.repeat(rating) + '☆'.repeat(5 - rating);
+  const formatReviewDate = (isoDate) =>
+    new Date(isoDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
 
   const updateOverallRating = (reviews) => {
     const totalReviews = reviews.length;
@@ -211,19 +216,69 @@ function initReviewsSection() {
     updateOverallRating(allReviews);
 
     reviewsTrack.innerHTML = duplicated
-      .map(({ name, review, rating }) => `
+      .map(({ name, review, rating, date }) => `
         <article class="review-card">
           <div class="review-header">
             <span class="review-name">${escapeHtml(name)}</span>
             <span class="review-stars">${renderStars(rating)}</span>
           </div>
+          <p class="review-date">${escapeHtml(formatReviewDate(date))}</p>
           <p class="review-text">${escapeHtml(review)}</p>
         </article>
       `)
       .join('');
   };
 
+  const restartMarquee = () => {
+    reviewsTrack.style.animation = 'none';
+    // Force reflow so animation restarts from the beginning.
+    void reviewsTrack.offsetWidth;
+    reviewsTrack.style.animation = '';
+  };
+
   renderReviews();
+
+  if (firebaseConfig && hasFirebaseSdk) {
+    try {
+      const app = window.firebase.apps.length
+        ? window.firebase.app()
+        : window.firebase.initializeApp(firebaseConfig);
+      firestore = window.firebase.firestore(app);
+      isRemoteMode = true;
+
+      firestore
+        .collection('reviews')
+        .orderBy('createdAt', 'desc')
+        .limit(300)
+        .onSnapshot(
+          (snapshot) => {
+            const remoteReviews = snapshot.docs
+              .map((doc) => {
+                const data = doc.data();
+                const date = data.createdAt && typeof data.createdAt.toDate === 'function'
+                  ? data.createdAt.toDate().toISOString()
+                  : new Date().toISOString();
+                return normalizeReview({
+                  name: data.name,
+                  review: data.review,
+                  rating: data.rating,
+                  date
+                });
+              })
+              .filter(Boolean);
+
+            userReviews = remoteReviews;
+            renderReviews();
+            restartMarquee();
+          },
+          () => {
+            isRemoteMode = false;
+          }
+        );
+    } catch (error) {
+      isRemoteMode = false;
+    }
+  }
 
   reviewForm.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -249,10 +304,29 @@ function initReviewsSection() {
       return;
     }
 
-    const newReview = { name: cleanName, rating: ratingValue, review: cleanReview };
-    userReviews = [...userReviews, newReview];
-    saveUserReviews(userReviews);
+    const newReview = {
+      name: cleanName,
+      rating: ratingValue,
+      review: cleanReview,
+      date: new Date().toISOString()
+    };
+    // Put latest review first so it appears immediately in the moving stream.
+    userReviews = [newReview, ...userReviews];
     renderReviews();
+    restartMarquee();
+
+    if (isRemoteMode && firestore) {
+      firestore.collection('reviews').add({
+        name: cleanName,
+        rating: ratingValue,
+        review: cleanReview,
+        createdAt: window.firebase.firestore.FieldValue.serverTimestamp()
+      }).catch(() => {
+        saveUserReviews(userReviews);
+      });
+    } else {
+      saveUserReviews(userReviews);
+    }
 
     reviewForm.reset();
     formMessage.textContent = 'Thanks! Your review is now posted publicly.';
