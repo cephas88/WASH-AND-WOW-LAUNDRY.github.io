@@ -649,6 +649,42 @@ button {
   }
 }
 
+@media (max-width: 900px) {
+  .hero {
+    display: block;
+    padding: calc(80px + var(--space-lg)) var(--space-md) var(--space-lg);
+  }
+
+  .hero-content,
+  .hero-visual {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hero-title,
+  .hero-subtitle,
+  .hero-promo {
+    text-align: left;
+  }
+
+  .hero-cta {
+    justify-content: flex-start;
+  }
+
+  .hero-promo {
+    margin: 0;
+  }
+
+  .hero-reviews-panel {
+    margin-top: var(--space-lg);
+  }
+
+  .reviews-track {
+    animation-duration: 60s;
+  }
+}
+
 @media (max-width: 600px) {
   .hero-stats {
     flex-direction: column;
@@ -665,6 +701,10 @@ button {
 
   .hero {
     padding-bottom: var(--space-xl);
+  }
+
+  .review-card {
+    width: min(260px, 82vw);
   }
 }
 

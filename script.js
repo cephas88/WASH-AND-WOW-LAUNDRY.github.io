@@ -440,6 +440,16 @@ document.querySelectorAll('.service-card').forEach(card => {
  * Parallax Effect for Hero Background (subtle)
  */
 window.addEventListener('scroll', () => {
+  if (window.innerWidth <= 900) {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+    const heroContent = hero.querySelector('.hero-content');
+    const heroVisual = hero.querySelector('.hero-visual');
+    if (heroContent) heroContent.style.transform = '';
+    if (heroVisual) heroVisual.style.transform = '';
+    return;
+  }
+
   const scrolled = window.pageYOffset;
   const hero = document.querySelector('.hero');
   
