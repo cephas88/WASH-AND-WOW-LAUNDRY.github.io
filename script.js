@@ -97,7 +97,7 @@ function initHeroSlideshow() {
  */
 function initScrollReveal() {
   const revealElements = document.querySelectorAll(
-    '.service-card, .feature-card, .offer-card, .section-header, .about-image, .about-content, .review-form-card, .reviews-marquee, .contact-info, .contact-cta'
+    '.service-card, .feature-card, .offer-card, .section-header, .about-image, .about-content, .review-form-card, .reviews-marquee, .contact-info, .contact-cta, .faq-item, .map-container'
   );
 
   const revealOnScroll = () => {
@@ -329,7 +329,8 @@ function initReviewsSection() {
     }
 
     reviewForm.reset();
-    formMessage.textContent = 'Thanks! Your review is now posted publicly.';
+    const waShareText = encodeURIComponent(`I just left a review for Wash & Wow Laundry in Thika! Great service — check them out on WhatsApp: wa.me/254742690291`);
+    formMessage.innerHTML = `Thanks! Your review is live. <a href="https://wa.me/?text=${waShareText}" target="_blank" rel="noopener noreferrer" style="color:var(--color-accent);font-weight:600;text-decoration:underline;">Share on WhatsApp &rarr;</a>`;
   });
 }
 
@@ -352,6 +353,8 @@ function initCounterAnimation() {
       
       counters.forEach(counter => {
         const target = parseInt(counter.getAttribute('data-target'));
+        const suffix = counter.getAttribute('data-suffix') || '';
+        if (isNaN(target)) return;
         const duration = 2000;
         const increment = target / (duration / 16);
         let current = 0;
@@ -359,10 +362,10 @@ function initCounterAnimation() {
         const updateCounter = () => {
           current += increment;
           if (current < target) {
-            counter.textContent = Math.ceil(current);
+            counter.textContent = Math.ceil(current) + suffix;
             requestAnimationFrame(updateCounter);
           } else {
-            counter.textContent = target;
+            counter.textContent = target + suffix;
           }
         };
 
