@@ -140,28 +140,9 @@ function initReviewsSection() {
   if (!reviewsTrack || !reviewForm || !nameInput || !reviewInput || !formMessage || !overallRating) return;
 
   const storageKey = 'washandwow-user-reviews';
-  const baseReviews = [
-    { name: 'Amina', rating: 5, date: '2026-03-01T10:15:00.000Z', review: 'Fast pickup and my clothes came back smelling fresh and neatly folded. Great service!' },
-    { name: 'Kevin', rating: 5, date: '2026-03-02T11:40:00.000Z', review: 'Very professional team. My white shirts were spotless and perfectly ironed.' },
-    { name: 'Faith', rating: 4, date: '2026-03-03T08:20:00.000Z', review: 'I loved the communication and timely delivery. Definitely using Wash & Wow again.' },
-    { name: 'Brian', rating: 5, date: '2026-03-04T14:10:00.000Z', review: 'They handled my suits with excellent care. Looked brand new after cleaning.' },
-    { name: 'Diana', rating: 4, date: '2026-03-05T09:35:00.000Z', review: 'Affordable prices and quality work. The free delivery made it super convenient.' },
-    { name: 'Peter', rating: 5, date: '2026-03-06T13:05:00.000Z', review: 'The duvet cleaning service was amazing. It came back fluffy and very clean.' },
-    { name: 'Mercy', rating: 5, date: '2026-03-07T15:45:00.000Z', review: 'Customer service was friendly and helpful. Clothes were ready exactly when promised.' },
-    { name: 'Samuel', rating: 5, date: '2026-03-08T12:30:00.000Z', review: 'Best laundry experience I have had in Thika. Highly recommended to everyone.' },
-    { name: 'Joan', rating: 4, date: '2026-03-09T16:25:00.000Z', review: 'My kids clothes were cleaned gently and still smelled fantastic. Thank you!' },
-    { name: 'Daniel', rating: 5, date: '2026-03-10T10:55:00.000Z', review: 'Quick turnaround and no missing items. Everything returned in perfect condition.' },
-    { name: 'Lucy', rating: 5, date: '2026-03-11T09:10:00.000Z', review: 'I use them every week now. Consistent quality and excellent finishing.' },
-    { name: 'James', rating: 4, date: '2026-03-12T17:05:00.000Z', review: 'Great stain removal on my work uniforms. Impressed with the results.' },
-    { name: 'Ruth', rating: 5, date: '2026-03-13T07:50:00.000Z', review: 'The team is polite and dependable. Pickup and drop off were very smooth.' },
-    { name: 'Dennis', rating: 4, date: '2026-03-14T13:15:00.000Z', review: 'Shoe cleaning was top notch. My sneakers looked fresh and bright again.' },
-    { name: 'Grace', rating: 5, date: '2026-03-15T11:25:00.000Z', review: 'Very clean packaging and neat folding. You can tell they pay attention to detail.' },
-    { name: 'Esther', rating: 5, date: '2026-03-16T14:40:00.000Z', review: 'Laundry was handled with care and delivered on time. Wonderful service overall.' },
-    { name: 'Alex', rating: 4, date: '2026-03-17T10:05:00.000Z', review: 'Fair pricing and premium results. I appreciate the reliability every single time.' },
-    { name: 'Caroline', rating: 5, date: '2026-03-18T12:45:00.000Z', review: 'The ironing quality is excellent. My outfits were ready for work immediately.' },
-    { name: 'John', rating: 4, date: '2026-03-19T08:55:00.000Z', review: 'Friendly staff and easy booking process through phone. Super convenient service.' },
-    { name: 'Naomi', rating: 5, date: '2026-03-20T15:20:00.000Z', review: 'Excellent neighborhood laundry partner. Clean, fresh, and always professional.' }
-  ];
+  // Genuine reviews only — these load live from Firestore as real customers submit them.
+  // No seeded or template reviews. An empty state shows until the first real review arrives.
+  const baseReviews = [];
 
   const escapeHtml = (text) =>
     text
@@ -204,19 +185,37 @@ function initReviewsSection() {
 
   const updateOverallRating = (reviews) => {
     const totalReviews = reviews.length;
+    if (!totalReviews) {
+      overallRating.textContent = 'Be the first to review us!';
+      return;
+    }
     const totalScore = reviews.reduce((sum, item) => sum + item.rating, 0);
-    const average = totalReviews ? (totalScore / totalReviews).toFixed(1) : '0.0';
-    overallRating.textContent = `Overall rating: ${average}/5 (${totalReviews} reviews)`;
+    const average = (totalScore / totalReviews).toFixed(1);
+    const label = totalReviews === 1 ? 'review' : 'reviews';
+    overallRating.textContent = `Overall rating: ${average}/5 (${totalReviews} ${label})`;
   };
 
   const renderReviews = () => {
     const allReviews = [...baseReviews, ...userReviews];
-    const duplicated = [...allReviews, ...allReviews];
 
     updateOverallRating(allReviews);
 
-    reviewsTrack.innerHTML = duplicated
-      .map(({ name, review, rating, date }) => `
+    // Genuine empty state: no reviews yet.
+    if (!allReviews.length) {
+      reviewsTrack.style.animation = 'none';
+      reviewsTrack.innerHTML = `
+        <article class="review-card review-card--empty">
+          <div class="review-header">
+            <span class="review-name">No reviews yet</span>
+            <span class="review-stars">☆☆☆☆☆</span>
+          </div>
+          <p class="review-text">Be the first to share your experience with Wash &amp; Wow. Use the form to leave a genuine review — it appears here right away.</p>
+        </article>
+      `;
+      return;
+    }
+
+    const cardHtml = ({ name, review, rating, date }) => `
         <article class="review-card">
           <div class="review-header">
             <span class="review-name">${escapeHtml(name)}</span>
@@ -225,8 +224,19 @@ function initReviewsSection() {
           <p class="review-date">${escapeHtml(formatReviewDate(date))}</p>
           <p class="review-text">${escapeHtml(review)}</p>
         </article>
-      `)
-      .join('');
+      `;
+
+    // With a single review the marquee has nothing to scroll; show it static.
+    if (allReviews.length === 1) {
+      reviewsTrack.style.animation = 'none';
+      reviewsTrack.innerHTML = cardHtml(allReviews[0]);
+      return;
+    }
+
+    // Duplicate cards for a smooth continuous marquee once there are enough real reviews.
+    reviewsTrack.style.animation = '';
+    const duplicated = [...allReviews, ...allReviews];
+    reviewsTrack.innerHTML = duplicated.map(cardHtml).join('');
   };
 
   const restartMarquee = () => {

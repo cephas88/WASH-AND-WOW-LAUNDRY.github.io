@@ -1,0 +1,26 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /reviews/{reviewId} {
+      // Public can read — needed for the review marquee to load
+      allow read: if true;
+
+      // Anyone can submit a review, with validation matching the site's form
+      allow create: if request.resource.data.name is string
+                    && request.resource.data.name.size() > 0
+                    && request.resource.data.name.size() <= 30
+                    && request.resource.data.review is string
+                    && request.resource.data.review.size() >= 10
+                    && request.resource.data.review.size() <= 220
+                    && request.resource.data.rating is number
+                    && request.resource.data.rating >= 1
+                    && request.resource.data.rating <= 5;
+
+      // Reviews cannot be edited or deleted from the client
+      allow update, delete: if false;
+    }
+
+  }
+}

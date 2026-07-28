@@ -1840,3 +1840,13 @@ button {
   background: var(--color-accent);
   color: var(--color-primary);
 }
+
+/* Genuine-reviews empty state */
+.review-card--empty {
+  text-align: center;
+  opacity: 0.92;
+}
+.review-card--empty .review-header {
+  justify-content: center;
+  gap: 0.5rem;
+}
