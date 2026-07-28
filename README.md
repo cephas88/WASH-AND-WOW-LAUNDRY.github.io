@@ -22,13 +22,6 @@ Reviews use a Firebase project. Config lives in `index.html` (`window.WASH_AND_W
 
 If Firebase is unavailable, the form falls back to storing a review locally in the visitor's own browser (not shared) — so a working Firebase project is required for reviews to be public.
 
-## Run Locally
-```bash
-git clone https://github.com/cephas88/washandwowlaundry.git
-cd washandwowlaundry
-python3 -m http.server 8000   # then open http://localhost:8000
-```
-Note: reviews load only when Firebase is configured and online; locally you'll see the empty state.
 
 ## Author
 **Cephas Nyamai Mutisya** — Software Developer
